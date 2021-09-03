@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\NewCellHeaders">
+      <UniqueIdentifier>{56fda016-bbcc-4ef3-bb5f-c82b51433b02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NewCellSources">
+      <UniqueIdentifier>{c4ca64fd-8a83-4b69-9f90-15c3fbbb5651}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TicketCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TicketCreatorDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\CellRange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridCell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridCellBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridDropTarget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\InPlaceEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\MemDC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\TitleTip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHomeDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CConditionsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPointLimitsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCouponDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COneConditionDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NumEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NumSpinCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellCheck.h">
+      <Filter>Header Files\NewCellHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellCombo.h">
+      <Filter>Header Files\NewCellHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellDateTime.h">
+      <Filter>Header Files\NewCellHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellNumeric.h">
+      <Filter>Header Files\NewCellHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridURLCell.h">
+      <Filter>Header Files\NewCellHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellSpinEdit.h">
+      <Filter>Header Files\NewCellHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="CouponView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CouponTicket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyTabCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TicketCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TicketCreatorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridCellBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridDropTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\InPlaceEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\TitleTip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHomeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CConditionsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPointLimitsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCouponDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COneConditionDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumSpinCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellCheck.cpp">
+      <Filter>Source Files\NewCellSources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellCombo.cpp">
+      <Filter>Source Files\NewCellSources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellDateTime.cpp">
+      <Filter>Source Files\NewCellSources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellNumeric.cpp">
+      <Filter>Source Files\NewCellSources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridURLCell.cpp">
+      <Filter>Source Files\NewCellSources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellSpinEdit.cpp">
+      <Filter>Source Files\NewCellSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CouponView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CouponTicket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyTabCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TicketCreator.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TicketCreator.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\image2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\TicketCreator.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\background.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\background.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
