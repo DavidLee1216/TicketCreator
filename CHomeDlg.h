@@ -34,4 +34,6 @@ public:
 	void ReloadTable(int nRow, int nCol);
 	afx_msg void OnBnClickedButtonAddColumn();
 	afx_msg void OnBnClickedButtonAddRow();
+	double m_dblScoreBase;
+	afx_msg void OnEnChangeEditScoreBase();
 };

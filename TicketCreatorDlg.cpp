@@ -49,7 +49,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CTicketCreatorDlg dialog
+CTicketCreatorDlg* g_pTicketCreatorDlg;
 
 
 
@@ -140,7 +140,7 @@ BOOL CTicketCreatorDlg::OnInitDialog()
 		m_pCouponDlg->Create(IDD_DIALOG_COUPONS, this);
 		m_pCouponDlg->ShowWindow(SW_HIDE);
 	}
-
+	g_pTicketCreatorDlg = this;
 	// Set the icon for this dialog.  The framework does this automatically
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon

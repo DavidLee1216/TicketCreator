@@ -23,6 +23,33 @@
 IMPLEMENT_DYNAMIC(CCouponDlg, CDialog)
 
 CouponAgenda g_couponAgenda;
+extern double g_dblScoreBase;
+extern CTicketCreatorDlg* g_pTicketCreatorDlg;
+
+double OneCoupon::calculateSingleLineScore(int depth) {
+	if (depth == nRow) {
+		double v = 0;
+		for (int i = 0; i < nRow; i++)
+		{
+			v += g_pTicketCreatorDlg->m_pPointLimitsDlg->m_nppPointMatrix[i + 1][m_pSelected[i]];
+		}
+		score += pow(g_dblScoreBase, v);
+		return score;
+	}
+	for (int i = 0; i < byteRowValues[depth]->cnt; i++)
+	{
+		m_pSelected[depth] = byteRowValues[depth]->arr[i];
+		calculateSingleLineScore(depth + 1);
+	}
+	return score;
+}
+
+void OneCoupon::calculateScore() {
+	m_pSelected = (int*)malloc(sizeof(int) * (nRow + 1));
+	score = 0;
+	score = calculateSingleLineScore(0);
+	free(m_pSelected);
+}
 
 Coupon::Coupon()
 {
@@ -534,6 +561,7 @@ void CCouponDlg::makeCoupons()
 	makeTickets(baseCoupon, 0, 0, 0);
 	int nSingleLines = countSingleLinesOfCoupon();
 	sortCoupons();
+	calculateCouponScores();
 	SYSTEMTIME time;
 	GetLocalTime(&time);
 	TCHAR str_time[100];
@@ -1152,4 +1180,13 @@ HBRUSH CCouponDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		pDC->SetBkColor(RGB(190, 219, 255));
 	}
 	return hbr;
+}
+
+
+void CCouponDlg::calculateCouponScores()
+{
+	for (int i = 0; i < m_nCouponCnt; i++)
+	{
+		m_coupons[i].calculateScore();
+	}
 }

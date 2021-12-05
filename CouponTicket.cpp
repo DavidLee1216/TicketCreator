@@ -104,7 +104,7 @@ void CouponTicket::OnDraw(CDC* pDC)
 	font.CreateFontIndirect(&lf);
  	CFont* oldfont = pDC->SelectObject(&font);
 	TCHAR str[1000];
-	_stprintf(str, _T("  Coupon No. %d - SingleLine %d  "), m_num, m_nSingleLineCnt);
+	_stprintf(str, _T("  Coupon No. %d - SingleLine %d - Score %.2f "), m_num, m_nSingleLineCnt, m_dblScore);
 	DrawText(pDC->m_hDC, str, -1, rect1, DT_CALCRECT | DT_CENTER | DT_NOPREFIX);
 	m_nWindowWidth = max(m_nWindowWidth, rect1.Width());
 	DrawText(pDC->m_hDC, str, -1, rect1, DT_CENTER|DT_NOPREFIX);
@@ -172,7 +172,7 @@ void CouponTicket::OnPrintDraw(CDC* pDC, CPrintInfo* pInfo, int left, int top, i
 	font.CreatePointFontIndirect(&lf);
 	CFont* oldfont = pDC->SelectObject(&font);
 	TCHAR str[1000];
-	_stprintf(str, _T("  Coupon No. %d - SingleLine %d  "), m_num, m_nSingleLineCnt);
+	_stprintf(str, _T("  Coupon No. %d - SingleLine %d - Score %.2f "), m_num, m_nSingleLineCnt, m_dblScore);
 	DrawText(pDC->m_hDC, str, -1, rect1, DT_BOTTOM | DT_SINGLELINE| DT_CENTER | DT_NOPREFIX);
 	font.DeleteObject();
 	memset(&lf, 0, sizeof(LOGFONT));
@@ -246,6 +246,7 @@ void CouponTicket::addCoupon(int num, OneCoupon* coupon, int line)
 	m_num = num;
 	m_nlineCount = line;
 	m_nSingleLineCnt = coupon->nSingleLineCnt;
+	m_dblScore = coupon->score;
 	m_nWindowWidth = DEFAULT_TICKET_WIDTH;
 	m_nWindowHeight = max(DEFAULT_TICKET_HEIGHT, LINE_HEIGHT * (line + 1));
 

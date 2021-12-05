@@ -37,12 +37,17 @@ class OneCoupon
 public:
 	OneCoupon(){
 		byteRowValues = 0;
+		m_pSelected = 0;
 	}
 	~OneCoupon(){
 	}
 	st_byte_array** byteRowValues;
+	int* m_pSelected;
+	double score;
 	int nRow;
 	int nSingleLineCnt;
+	void calculateScore();
+	double calculateSingleLineScore(int depth);
 };
 
 struct st_byte_array
@@ -161,6 +166,7 @@ public:
 	int m_nTo;
 	int m_nCondRow;
 	int m_nCondCol;
+	void calculateCouponScores();
 };
 
 

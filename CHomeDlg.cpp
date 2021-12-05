@@ -8,6 +8,7 @@
 
 #define DEFAULT_ROW_CNT 5
 #define DEFAULT_COL_CNT 3
+#define DEFAULT_SCORE_BASE 0.952
 
 #define IDC_HOME_GRID 5001
 #define WM_TABLE_UPDATED WM_USER+2
@@ -16,15 +17,20 @@
 
 IMPLEMENT_DYNAMIC(CHomeDlg, CDialog)
 
+double g_dblScoreBase = 0;
+
 CHomeDlg::CHomeDlg(CWnd* pParent /*=nullptr*/)
 	: CDialog(IDD_DIALOG_HOME, pParent)
 	, m_nMatchCount(0)
 	, m_nOutcomeCount(0)
+	, m_dblScoreBase(0)
 {
 	m_pGrid = NULL;
 	m_pParentWnd = NULL;
 	m_nMatchCount = DEFAULT_ROW_CNT;
 	m_nOutcomeCount = DEFAULT_COL_CNT;
+	m_dblScoreBase = DEFAULT_SCORE_BASE;
+	g_dblScoreBase = m_dblScoreBase;
 }
 
 CHomeDlg::~CHomeDlg()
@@ -38,6 +44,7 @@ void CHomeDlg::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	DDX_Text(pDX, IDC_EDIT_MATCH_COUNT, m_nMatchCount);
 	DDX_Text(pDX, IDC_EDIT_OUTCOME_COUNT, m_nOutcomeCount);
+	DDX_Text(pDX, IDC_EDIT_SCORE_BASE, m_dblScoreBase);
 }
 
 
@@ -51,6 +58,7 @@ BEGIN_MESSAGE_MAP(CHomeDlg, CDialog)
 ON_WM_CTLCOLOR()
 ON_BN_CLICKED(IDC_BUTTON_ADD_COLUMN, &CHomeDlg::OnBnClickedButtonAddColumn)
 ON_BN_CLICKED(IDC_BUTTON_ADD_ROW, &CHomeDlg::OnBnClickedButtonAddRow)
+ON_EN_CHANGE(IDC_EDIT_SCORE_BASE, &CHomeDlg::OnEnChangeEditScoreBase)
 END_MESSAGE_MAP()
 
 
@@ -383,4 +391,12 @@ void CHomeDlg::OnBnClickedButtonAddRow()
 	m_pGrid->SetFixedTextColor(RGB(255, 255, 255));
 	SendMessage(WM_SIZE, 0, 0);
 	SendMessage(WM_TABLE_ADD_ROW, m_nMatchCount, m_nOutcomeCount);
+}
+
+
+void CHomeDlg::OnEnChangeEditScoreBase()
+{
+	UpdateData(TRUE);
+	g_dblScoreBase = m_dblScoreBase;
+
 }

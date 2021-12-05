@@ -34,5 +34,6 @@ public:
 	void addCoupon(int num, OneCoupon* coupon, int line);
 	void resetCoupon();
 	CWnd* m_pParent;
+	double m_dblScore;
 };
 
