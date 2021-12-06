@@ -256,7 +256,7 @@ void CouponView::OnDraw(CDC* pDC)
 		_tcscpy_s(lf.lfFaceName, _T("Arial"));
 		font1.CreateFontIndirect(&lf);
 		pDC->SelectObject(&font1);
-		_stprintf(str, _T(" Coupon count:%d         Single Line Count:%d"), m_nCouponCnt, m_nSingleLineCnt);
+		_stprintf(str, _T(" Coupon count:%d         Single Line Count:%d, Total Score:%.2f"), m_nCouponCnt, m_nSingleLineCnt, m_dblTotalScore);
 		rect.top = rect.top + 50; rect.bottom = 100; rect.left = 50; rect.right = rect.right;
 		DrawText(pDC->m_hDC, str, -1, rect, DT_LEFT | DT_NOPREFIX);
 		pDC->SelectObject(&oldfont);
@@ -331,7 +331,7 @@ void CouponView::OnPrintDraw(CDC* pDC, CPrintInfo *pInfo)
 			_tcscpy_s(lf.lfFaceName, _T("Arial"));
 			font1.CreatePointFontIndirect(&lf);
 			pDC->SelectObject(&font1);
-			_stprintf(str, _T(" Coupon count:%d         Single Line Count:%d"), m_nCouponCnt, m_nSingleLineCnt);
+			_stprintf(str, _T(" Coupon count:%d         Single Line Count:%d, Total Score:%.2f"), m_nCouponCnt, m_nSingleLineCnt, m_dblTotalScore);
 			rect.top = rect.top + nTitleFontSize1/10; rect.bottom = rect.top+ nTitleFontSize2/10; rect.left = 100; rect.right = w;
 // 			rect.top = rect.top + nTitleFontSize1 *rateY; rect.bottom = rect.top+ nTitleFontSize2 *rateY; rect.left = nTitleFontSize1 *rateX; rect.right = rect.left + w*rateX;
 			LPtoDP(pDC->m_hDC, (LPPOINT)&rect, 2);
@@ -479,6 +479,7 @@ void CouponView::reloadCoupons(OneCoupon* coupon, int nCouponCnt, int lineCnt, i
 	if(m_pTickets)
 		delete[] m_pTickets;
 	m_nCouponCnt = 0;
+	m_dblTotalScore = 0;
 	makeTickets(coupon, nCouponCnt, lineCnt, singleCnt, time);
 }
 
@@ -496,7 +497,7 @@ void CouponView::makeTickets(OneCoupon* coupon, int nCouponCnt, int lineCnt, int
 		m_nCouponCnt++;
 		m_pTickets[i].addCoupon(i+1, coupon+i, lineCnt);
 		m_pTickets[i].ShowWindow(SW_HIDE);
-
+		m_dblTotalScore += coupon[i].score;
 	}
 	Invalidate(TRUE);
 }

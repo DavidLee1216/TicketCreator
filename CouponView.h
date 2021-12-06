@@ -56,5 +56,6 @@ public:
 	virtual void OnPrint(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	CDC* CreatePrintDC();
+	double m_dblTotalScore;
 };
 
